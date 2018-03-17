@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
+<% if @products.blank? %>
+<h4>We got nothing. There are no products matching '<%= params[:search] %>' :(</h4>
+<% else %>
 <table>
   <thead>
     <tr>
@@ -23,9 +25,11 @@
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <% end %>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<%= link_to 'Back', products_path %>
