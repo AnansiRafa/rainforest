@@ -41,6 +41,11 @@
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 <% end %>
+<div class="container">
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+</div>
     <%= yield %>
     <%= link_to 'Create an account', new_user_path %>
     <script>
