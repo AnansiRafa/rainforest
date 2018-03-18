@@ -1,35 +1,35 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Products</h1>
-<% if @products.blank? %>
-<h4>We got nothing. There are no products matching '<%= params[:search] %>' :(</h4>
-<% else %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price in cents</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+<div class="container">
+  <h3>Products</h3>
+  <% if @products.blank? %>
+  <h4>We got nothing. :(</h4>
+  <% else %>
+  <table>
+    <thead>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.formatted_price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price in cents</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= product.formatted_price %></td>
+          <td><%= link_to 'Show', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Product', new_product_path %>
-<%= link_to 'Back', products_path %>
+  <br>
+</div>
+
+
