@@ -3,14 +3,14 @@
   <head>
     <title>Rainforest</title>
     <%= csrf_meta_tags %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-    <!-- Compiled and minified CSS -->
+        <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
@@ -18,39 +18,8 @@
   </head>
 
   <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Products</a></li>
-        <li><a href="badges.html">Services</a></li>
-        <li><a href="collapsible.html">Contact Us</a></li>
-        <li><a href="mobile.html">About</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
-  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-<% end %>
-<div class="container">
-<% flash.each do |key, value| %>
-<!--not sure why the below line is here; commenting out for now -ant  -->
-<!-- <div class="alert alert-<%= key %>"><%= value %></div>  -->
-<% end %>
-</div>
+    <%= render "shared/top_nav" %>
+    <%= render "shared/search_bar" %>
     <%= yield %>
-    <%= link_to 'Create an account', new_user_path %>
-    <script>
-      $(".button-collapse").sideNav();
-    </script>
   </body>
 </html>
