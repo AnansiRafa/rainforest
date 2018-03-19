@@ -13,3 +13,7 @@
 	display: block;
 	margin: auto;
 }
+
+.container {
+	background-image: url("./app/assets/images/sand.jpg");
+}
