@@ -1,0 +1,37 @@
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <%=image_tag ("sunglasses.jpg")%>
+      <div class="caption center-align">
+        <h3> </h3>
+        <h5 class="light grey-text text-lighten-3"> </h5>
+      </div>
+    </li>
+    <li>
+      <%=image_tag ("bridge.jpg")%>
+      <div class="caption left-align">
+        <a href="/products"><h3>Products</h3></a>
+        <h5 class="light grey-text text-lighten-3">Checkout our hot line</h5>
+      </div>
+    </li>
+    <li>
+      <%=image_tag ("swamp.jpg")%>
+      <div class="caption right-align">
+        <h3>Contact</h3>
+        <h5 class="light grey-text text-lighten-3"></h5>
+      </div>
+    </li>
+    <li>
+      <%=image_tag ("sunset.jpg")%>
+      <div class="caption center-align">
+        <h3>About Us</h3>
+        <h5 class="light grey-text text-lighten-3">MAD is a local distributor of Wynwood</h5>
+      </div>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript">
+ $(document).ready(function(){
+  $('.slider').slider({full_width: true});
+});
+</script>
