@@ -15,11 +15,14 @@
  */
  body {
  	margin: 2rem;
+ 	background-color: beige;
  }
  p {
  	max-height: 50%;
  }
-
+table {
+	background-color: #f1f1f1;
+}
 element.style {
 }
 nav ul a {
