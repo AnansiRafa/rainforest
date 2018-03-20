@@ -1,5 +1,5 @@
 <%= form_with(model: user, local: true) do |form| %>
-  
+
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2>The form contains <%= pluralize(user.errors.count, "error") %>:</h2>
@@ -11,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="container">
     <div class="field">
       <%= form.label :name %>
@@ -28,13 +28,13 @@
       <%= form.password_field :password %>
     </div>
 
-    <div class="field">
+    <!-- <div class="field">
       <%= form.label :password %>
       <%= form.password_field :password, id: :user_password %>
-    </div>
+    </div> -->
 
     <div class="field">
-      <%= form.label :password_confirmation, "Confirmation" %>
+      <%= form.label :password_confirmation, "Confirm password" %>
       <%= form.password_field :password_confirmation, id: :user_password %>
     </div>
 
@@ -42,5 +42,5 @@
       <%= form.submit "Create an account" %>
     </div>
   </div>
-  
+
 <% end %>
