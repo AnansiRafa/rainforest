@@ -1,17 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class="cart">
+
+<h3>Your Cart</h3>
+<ul>
 
 <h4>
   <%= @product.name %>
 </h4>
-
+<li><%= image_tag @product.avatar.url, size: 90%></li>
+<li><%= link_to 'Remove from Cart', products_path %></li>
 <!-- <h3>
   <strong>Description:</strong>
   <%= @product.description %>
 </h3> -->
 
 <h4>
-  <%= @product.formatted_price %>
+  <li><%= @product.formatted_price %></li>
 </h4>
+</ul>
+<h4>Subtotal: <%= @product.formatted_price %></h4>
+<h4>Shipping: $0.00</h4>
+<h4>Tax: $24.00</h4>
+<h4>Total: $423.99</h4>
+<%= link_to '<button type="button">Order Now</button>'.html_safe, new_charge_path %>
+</div>
+
 
 
 <%= link_to 'Back', products_path %>

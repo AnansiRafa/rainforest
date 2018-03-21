@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ *{
+   font-family: verdana;
+ }
  body {
  	margin: 2rem;
  	background-color: beige;
@@ -33,4 +37,10 @@ nav ul a {
     display: block;
     padding: 0 15px;
     cursor: pointer;
+}
+
+.cart {
+  text-align: center;
+  list-style-type: none;
+
 }
