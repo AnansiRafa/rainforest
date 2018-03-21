@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'carts/show'
+
   root to: 'products#index'
+  get '/add', to: 'products#index2'
+  get '/checkout', to: 'carts#show'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

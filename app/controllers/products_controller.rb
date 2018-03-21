@@ -1,17 +1,28 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
   # GET /products
   # GET /products.json
   def index
+    @cart_item = 0
     if params[:search]
       @products = Product.search(params[:search]).order("created_at DESC")
     else
       @products = Product.all.order("created_at DESC")
     end
   end
+
+  def index2
+    @cart_item = 1
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order("created_at DESC")
+    end
+  end
+
+
 def about
-   
+
 end
   # GET /products/1
   # GET /products/1.json

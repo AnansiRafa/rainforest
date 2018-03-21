@@ -1,16 +1,18 @@
-  <nav>
-    <div class="nav-wrapper #004D40 teal darken -4">
-      <a href="/" class="brand-logo"><img src="https://files.slack.com/files-pri/T055GEHEJ-F9R7FKZR6/clearmustache.jpg"></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Products</a></li>
-        <li><a href="/about">About</a></li>
-        <% if logged_in? %>
-          <li><%= link_to "Profile", current_user%></li>
-          <li><%= link_to "Logout", logout_path, method: :delete%></li>
-        <% else %>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/login">Log In</a></li>
-        <% end -%>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper #004D40 teal darken -4">
+    <a href="/" class="brand-logo"><img src="https://files.slack.com/files-pri/T055GEHEJ-F9R7FKZR6/clearmustache.jpg"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">Products</a></li>
+      <li><a href="/about">About</a></li>
+      <% if logged_in? %>
+      <li><%= "I see #{pluralize(@cart_item, 'item')} in your cart!"%></li>
+      <li><%= link_to "Checkout", checkout_path%></li>
+      <li><%= link_to "Profile", current_user%></li>
+      <li><%= link_to "Logout", logout_path, method: :delete%></li>
+      <% else %>
+      <li><a href="/signup">Sign Up</a></li>
+      <li><a href="/login">Log In</a></li>
+      <% end -%>
+    </ul>
+  </div>
+</nav>
